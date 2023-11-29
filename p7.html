@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <center>
+        <label for="">enter number</label><br>
+        <input type="text" placeholder="enter number" id="a1">
+
+        <h1 id="ans"></h1>
+    </center>
+
+</body>
+</html>
+
+<script>
+
+    let a=document.getElementById("a1").value
+
+    if(a == "")
+    {
+        document.getElementById("ans").innerHTML="enter number"
+    }
+    else{
+        if(a % 7 == 0 && a % 5 == 0)
+        {
+            document.getElementById("ans").innerHTML="divisible by 5 and 7"
+        }
+        else{
+            document.getElementById("ans").innerHTML=" not divisible by 5 and 7"
+        }
+    }
+
+</script>

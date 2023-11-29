@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+
+        <label for="">enter age</label> <br>
+
+        <input type="text" name="" id="a1" placeholder="enter age">
+
+    </center>
+    
+    <h1 id="ans"></h1>
+</body>
+</html>
+
+<script>
+
+    let a=document.getElementById("a1").value
+
+    if(a=="")
+    {
+        document.getElementById("ans").innerHTML="youe ticket prise"
+    }
+    else{
+        if( a < 18)
+    {
+        document.getElementById("ans").innerHTML="$8"
+    }
+    else if(a >= 18 && a < 65)
+    {
+        document.getElementById("ans").innerHTML="$12"
+    }
+    else{
+        document.getElementById("ans").innerHTML="$6"
+    }
+    }
+
+
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <center>
+
+        <label for="">enter character</label> <br>
+        <input type="text" name="" id="a1" placeholder="enter character">
+
+        <h1 id="ans"></h1>
+
+    </center>
+
+</body>
+</html>
+
+<script>
+
+    let a=document.getElementById("a1").value
+
+    if(a=="")
+    {
+        document.getElementById("ans").innerHTML="enter character"
+    }
+    else{
+        if( a == "a" || a == "e" || a == "i" || a == "o" || a =="u" || a == "A" || a == "E" || a == "I" || a == "O" || a =="U" )
+        {
+            document.getElementById("ans").innerHTML="vowel"
+        }
+        else{
+            document.getElementById("ans").innerHTML="not vowel"
+        }
+    
+    }
+
+</script>
