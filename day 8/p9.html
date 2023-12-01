@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <label for="">Enter Value 1:</label><br>
+        <input type="text" name="" id="a1"><br><br>
+
+
+        <label for="">Enter Value 2:</label><br>
+        <input type="text" name="" id="a2"><br><br>
+
+
+        <label for="">Enter Value 3:</label><br>
+        <input type="text" name="" id="a3"><br>
+
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+
+<script>
+    let a = document.getElementById("a1").value
+    let b = document.getElementById("a2").value
+    let c = document.getElementById("a3").value
+
+    let d = +a + +b + +c;
+    console.log(d)
+
+    if(d == 180)
+    {
+        document.getElementById("ans").innerHTML = "It's Tringle"
+        if(a == b && b == c && c == a)
+        {
+            document.getElementById("ans").innerHTML = "Equilateral"
+        }
+        else if(a != b && b != c && c != a)
+        {
+            document.getElementById("ans").innerHTML = "Scalene"
+        }
+        else
+        {
+            document.getElementById("ans").innerHTML = "Isoceles"
+        }
+    }
+</script>

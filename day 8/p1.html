@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+
+        <label for="">enter unit</label> <br>
+
+        <input type="text" name="" id="in" placeholder="enter unit">
+
+        <h1 id="ans"></h1>
+
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    let unit=document.getElementById("in").value
+
+    if(unit == "")
+    {
+        document.getElementById("ans").innerHTML=""
+    }else{
+
+        if(unit >= 1 && unit <= 100)
+        {
+            let total=unit*1
+            document.getElementById("ans").innerHTML=`your bill amout =${total}`
+        }else if( unit >= 101 && unit <= 200)
+        {
+            let total=(unit-100)*2 + 100
+            document.getElementById("ans").innerHTML=`your bill amout =${total}`
+        }else{
+            let total=(unit-200)*3 + 300
+            document.getElementById("ans").innerHTML=`your bill amout =${total}`
+        }
+
+    }
+
+
+    
+</script>
