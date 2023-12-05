@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+
+        <label for="">enter purchases</label> <br>
+
+        <input type="text" name="" id="in1" placeholder="enter purchases"> <br><br>
+
+        <label for="">enter spending</label> <br>
+
+        <input type="text" name="" id="in2" placeholder="enter spending">
+
+        <h1 id="ans"></h1>
+
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    let pur=document.getElementById("in1").value 
+
+    let spe=document.getElementById("in2").value
+
+    let result
+
+    if(pur=="" || spe=="")
+    {
+        result=" "
+    }else{
+
+    if(pur >=3 && spe >=100)
+    {
+        result='Congratulations! You are eligible for a special offer'
+    }else{
+        result='Sorry! You are not eligible for the special offer'
+    }
+    }
+    document.getElementById("ans").innerHTML=result
+
+</script>

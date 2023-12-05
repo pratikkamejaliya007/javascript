@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+
+        <h1>day:</h1>
+
+        <h2> 1 press for sunday</h2>
+
+        <h2> 2 press for monday</h2>
+
+        <h2> 3 press for tuesday</h2>
+
+        <h2> 4 press for weansday</h2>
+
+        <h2> 5 press for thirsday</h2>
+
+        <h2> 6 press for firday</h2>
+
+        <h2> 7 press for satursday</h2>
+
+        <label for="">enter day</label>
+        <br>
+
+        <input type="text" name="" id="in" placeholder="enter day ">
+
+        <h1 id="ans"></h1>
+        
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    let day=document.getElementById("in").value 
+
+    let result
+
+    switch (parseInt(day)) {
+        case 1:
+            result="sunday"
+            break;
+
+        case 2 :
+            result="monday"
+            break;
+    
+        case 3:
+            result="tuesday"
+            break;
+
+        case 4:
+            result="weansday"
+            break
+
+        case 5:
+            result="thirsday"
+            break
+
+        case 6:
+            result="friday"
+            break
+
+        case 7 :
+            result="satuesday"
+            break
+        default:
+            result="invalid input"
+    }
+
+    document.getElementById("ans").innerHTML=result
+
+</script>
