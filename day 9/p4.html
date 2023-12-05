@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+
+        <h1>language</h1>
+        <h2>English</h2>
+        <h2>Spanish</h2>
+        <h2>Fresh</h2>
+
+        <input type="text" name="" id="in" placeholder="enter language">
+
+        <h1 id="ans"></h1>
+
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    let lan=document.getElementById("in").value 
+
+    let result
+
+    if(lan=='')
+    {
+        result=" "
+    }else{
+
+    switch(lan){
+        case 'english':result=`Hello!`
+        break
+
+        case 'spanish':result=`Hola!`
+        break
+
+        case 'french':result=`Bonjour`
+        break
+
+        default:result=`Language not supported`
+    }
+
+    document.getElementById("ans").innerHTML=result
+    } 
+
+</script>

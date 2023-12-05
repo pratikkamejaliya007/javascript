@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+
+        <input type="text" name="" id="in1" placeholder="enter value"> <br><br>
+
+        <input type="text" name="" id="in2" placeholder="enter value"> <br><br>
+
+
+
+        <input type="text" name="" id="in3" placeholder="enter choise">
+
+        <h1 id="ans"></h1>
+
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    let value1=document.getElementById("in1").value
+
+    let value2=document.getElementById("in2").value
+
+    let choise=document.getElementById("in3").value
+
+    let result
+
+    switch(choise){
+        case '+' :result= `result =${+value1 + +value2}`
+        break
+
+        case '-':result= `result =${+value1 - +value2}`
+        break
+
+        case '*':result= `result =${+value1 * +value2}`
+        break
+
+        case '/':result= `result =${+value1 / +value2}`
+        break
+
+        default:
+            result=`invalid input`
+    }
+
+
+    console.log(result)
+
+
+</script>

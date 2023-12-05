@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+
+        <h1>day:</h1>
+        <h2>press 1 for monday</h2>
+        <h2>press 2 for tuesday</h2>
+        <h2>press 3 for weansday</h2>
+        <h2>press 4 for thirsday</h2>
+        <h2>press 5 for friday</h2>
+        <h2>press 6 for satursdat</h2>
+        <h2>press 7 for sunday</h2>
+
+        <label for="">enter day</label> <br>
+
+        <input type="text" name="" id="in" placeholder="enter ">
+
+
+        <h1 id="ans"></h1>
+
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    let day=document.getElementById("in").value 
+
+    let data
+
+    switch(parseInt(day)){
+
+        case 1 : data=`it's day is monday (it's the start of the workweek )`
+        break
+
+        case 2 :data=`it's day is tuesday (it's second day of the workweek )`
+        break
+
+        case 3:data=`it's day is wensday (it's third day of the workweek)`
+        break
+
+        case 4 :data=`it's day is thirsday (it's fourth day of the workweek)`
+        break
+
+        case 5:data=`it's day is friday (it's almost the weekend!)`
+        break
+
+        case 6:data=`it's day saturday (it's some other day)`
+        break
+
+        case 7:data=`it's day sunday (full enjoy!!!)`
+        break
+
+        default :data=`invalid input`
+    }
+
+    console.log(data)
+
+
+</script>

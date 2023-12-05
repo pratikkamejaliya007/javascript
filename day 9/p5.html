@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+      <center>
+
+        <h1>A-F</h1>
+
+   <label for="">enter grade</label> <br><br>
+    
+  <input type="text" id="in" placeholder="enter grade">   
+
+  <h1 id="ans"></h1>
+
+      </center>
+
+</body>
+</html>
+
+<script>
+
+let grade=document.getElementById("in").value 
+
+let result
+
+if(grade=='')
+{
+    result=""
+}else{
+
+switch(grade){
+    case 'A':result=`Excellent!`
+    break
+
+    case 'B':result=`Well Done! you got B`
+    break
+    
+    case 'C':result=`Good jon! you got C`
+    break
+
+    case 'D':result=`you got a D`
+    break
+
+    case "F":result=`Unfortunately, you are fail`
+}
+}
+document.getElementById("ans").innerHTML=result
+
+
+</script>
