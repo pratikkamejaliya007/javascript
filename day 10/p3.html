@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+
+        <h1>1-99</h1>
+
+        <label for="">enter number</label> <br><br>
+
+        <input type="text" id="in" placeholder="enter number">
+
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    let n=document.getElementById("in").value 
+
+    let i=1
+
+    if(n<=20)
+    {
+        
+    do{
+        if(i % 2 == 0)
+        {
+            console.log(i)
+        }
+        i++
+    }while(i<=parseInt(n))
+    }else{
+        document.write("number limit is 20")
+    }
+
+
+</script>
