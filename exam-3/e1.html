@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+        <h1 id="ans"></h1>
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    let b=prompt("enter guest number") 
+
+    let a=parseInt(b)
+
+    // switch(a){
+    //     case 0:
+    //         console.log("It seems like no one is attending the reception. Are you sure?")
+    //         break
+
+    //     case 1:
+    //         document.getElementById("ans").innerHTML="Great! There is one guest attending the reception."
+    //         break
+
+    //     case 2:
+    //         document.getElementById("ans").innerHTML="Perfect! You and one other person will be attending the receptio"
+    //         break
+
+    //     default:
+    //     document.getElementById("ans").innerHTML="Perfect! You and one other person will be attending the receptio"
+            
+    // }
+
+    let name=['pratik','gautam','divyesh','jaydip','vivek','neel','sarthi']
+
+    if(a===0){
+        console.log("It seems like no one is attending the reception. Are you sure?")
+    }else if(a===1){
+        document.getElementById("ans").innerHTML="Great! There is one guest attending the reception."
+
+        for(let i=1;i<=a;i++){
+            document.write("thank you geust number" + i + " " + name[i])
+        }
+
+    }else if(a===2){
+        document.getElementById("ans").innerHTML="Perfect! You and one other person will be attending the receptio"
+        for(let i=1;i<=a;i++){
+            document.write("thank you geust number" + i + " " + name[i] + "<br>")
+        }
+    }else if(a>=3){
+        document.getElementById("ans").innerHTML="Perfect! You and one other person will be attending the receptio"  
+        for(let i=1;i<=a;i++){
+            if(i===3){
+                continue
+            }else{
+                document.write("thank you geust number" + i + " " + name[i]  + "<br>")
+            }
+        } 
+    }else{
+        document.getElementById("ans").innerHTML="Invalid input. Please enter a valid number of guests."
+    }
+
+
+</script>
