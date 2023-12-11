@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    
+</body>
+</html>
+
+<script>
+
+    let add=0
+
+    let value=998
+
+    let count=0
+
+    function sumofdigit(){
+
+        while(value>0){
+           add += value % 10
+
+           value/=10
+        }
+
+        
+    if (add > 10) {
+      add -= 1 
+    }
+
+        console.log(parseInt(add))
+
+    }
+
+    sumofdigit()
+
+</script>

@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q-1</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  let sum = 0;
+  let num = 723;
+
+  function sumOfDigits() {
+    while (num > 0) {
+      sum += num % 10;
+
+      num /= 10;
+    }
+
+    if (sum > 10) {
+      sum -= 1;
+    }
+
+    console.log(parseInt(sum));
+  }
+
+  sumOfDigits();
+</script>
