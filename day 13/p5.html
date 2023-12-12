@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+
+        <input type="text" id="in1" placeholder="enter string"> <br><br>
+        <input type="text" id="in2" placeholder="enter string">
+
+        <h1 id="ans"></h1>
+
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+
+function concat(a,b){
+    var c=a+b;
+    return c
+}
+
+let a=document.getElementById("in1").value
+
+let b=document.getElementById("in2").value
+
+
+    document.getElementById("ans").innerHTML=concat(a,b)
+
+</script>

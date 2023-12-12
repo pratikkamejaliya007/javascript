@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+        <input type="text" name="" id="in" placeholder="enter tempurasure(f)">
+
+        <h1 id="ans"></h1>
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    function f(c){
+        return (c-32) * 5/9
+    }
+
+    let a=document.getElementById("in").value 
+
+    document.getElementById("ans").innerHTML=f(parseInt(a))
+
+</script>

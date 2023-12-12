@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+
+        <input type="text" id="in1" placeholder="enter number"> <br><br>
+        <input type="text" id="in2" placeholder="enter number">
+
+        <h1 id="ans"></h1>
+
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    function max(a,b){
+        if(a==" " || b==" "){
+            return b
+        }else{
+            if(a>b){
+            return a
+        }else{
+            return b
+        }
+        }
+    }
+
+    
+    let a=document.getElementById("in1").value 
+
+    let b=document.getElementById("in2").value 
+
+    let ans=max(parseFloat(a),parseFloat(b))
+
+    // if(ans=" "){
+    //     document.getElementById("ans").innerHTML=""
+    // }else{
+        document.getElementById("ans").innerHTML=ans
+    // }
+
+    
+
+</script>
