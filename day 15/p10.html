@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+        <input type="text" name="" id="in-2" placeholder="enter number"> <br>
+
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    let fac=1;
+
+    function fact(a){
+        for(let i=a;i>=1;i--){
+            fac*=i
+        }
+        return fac
+    }
+
+    
+
+    let a=document.getElementById("in-2").value
+
+
+    console.log(fact(a))
+
+    
+</script>

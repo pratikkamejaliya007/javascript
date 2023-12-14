@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+        <input type="text" id="in-1" placeholder="enter number"> <br><br>
+        <input type="text" id="in-2" placeholder="enter number">
+
+
+        <h1 id="ans"></h1>
+
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    let add=function (a,b){
+        document.getElementById("ans").innerHTML= +a + +b
+    }
+
+
+    add(document.getElementById("in-1").value,document.getElementById("in-2").value)
+
+</script>
