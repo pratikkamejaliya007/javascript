@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    let arr=[1,2,3,4,5,6]
+
+    let newarr=arr.filter((a)=>{
+        return a%2==0
+    })
+
+    console.log(newarr)
+
+    let add=newarr.map((x)=>{
+        return x*x
+    })
+
+    console.log(add)
+
+    let sum=add.reduce((x,y)=>{
+        return x+y
+    })
+    console.log(sum)
+
+</script>
