@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    def toggle_case(input_string):
+    toggled_string = ""
+    
+    for char in input_string:
+        # Check if the character is an uppercase letter
+        if 'A' <= char <= 'Z':
+            # Convert uppercase to lowercase using ASCII values
+            toggled_char = chr(ord(char) + 32)
+        // # Check if the character is a lowercase letter
+        elif 'a' <= char <= 'z':
+            // # Convert lowercase to uppercase using ASCII values
+            toggled_char = chr(ord(char) - 32)
+        else:
+            // # Keep non-alphabetic characters unchanged
+            toggled_char = char
+        
+        // # Append the character to the toggled string
+        toggled_string += toggled_char
+    
+    return toggled_string
+
+// # Get input from the user
+input_string = input("Enter any string: ")
+
+// # Convert the string to toggle case
+result = toggle_case(input_string)
+
+// # Display the result
+print("Toggle case string:", result)
+
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+        <input type="text" name="" id="in-1" placeholder="enter string">
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    let str=document.getElementById("in-1").value 
+
+    var count=0;
+
+    
+
+    for(let i=0;i<str.length;i++){
+        if(str.charAt(i)=="a"||str.charAt(i)=='e'||str.charAt(i)=='i'||str.charAt(i)=='o'||str.charAt(i)=='u'||str.charAt(i)=="A"||str.charAt(i)=='E'||str.charAt(i)=='I'||str.charAt(i)=='O'||str.charAt(i)=='U'){
+            count++;
+        }
+    }
+
+    console.log(count)
+
+
+</script>
