@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    let quotes=[
+        {
+            text:"Education is one thing no one can take away from you.",
+            author:"Elin Nordegren",
+            category:"education"
+        },
+        {
+            text:"Education is the key that unlocks the golden door to freedom.",
+            author:"George Washington Carver",
+            category:"education"
+        },
+        {
+            text:"Gentlemen, you can't fight in here. This is the war room.",
+            author:"Dr. Strangelove",
+            category:"funny"
+        },
+        {
+            text:"My mother always used to say: The older you get, the better you get, unless you’re a banana.",
+            author:"rose",
+            category:"funny"
+        },
+    ]
+
+    let array=[]
+
+    for(let i=0;i<quotes.length;i++){
+        if(quotes[i].category=="education"){
+            array.push(quotes[i].text)
+        }
+    }
+
+    console.log(array)
+
+</script>

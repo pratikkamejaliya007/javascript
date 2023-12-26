@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    
+    let book=[
+        {
+            title:"Do Androids Dream of Electric Sheep?",
+            author:" Philip K. Dick",
+            prise:40,
+            quantityAvailable:30
+        },
+        {
+            title:"The Hitchhiker's Guide to the Galaxy",
+            author:" Douglas Adams",
+            prise:609,
+            quantityAvailable:80
+        },
+        {
+            title:"Something Wicked This Way Comes",
+            author:" Ray Bradbury",
+            prise:55,
+            quantityAvailable:90
+        },
+        {
+            title:"The Curious Incident of the Dog in the Night-Time",
+            author:"Mark Haddon",
+            prise:90,
+            quantityAvailable:100
+        },
+        {
+            title:"To Kill a Mockingbird",
+            author:"Lynne Truss",
+            prise:99,
+            quantityAvailable:9
+        },
+    ]
+
+    let array=[]
+
+    for(let i=0;i<book.length;i++){
+        if(book[i].prise<=60){
+            array.push(book[i].title)
+        }
+    }
+
+    console.log(array)
+
+</script>
