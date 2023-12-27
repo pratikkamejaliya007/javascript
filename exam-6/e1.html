@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    function library(x,y){
+        for(let i=0;i<5;i++){
+            if(x<=2000){
+                return y
+            }else{
+                return ""
+            }
+        }
+    }
+    
+    let book=[
+        {
+            title:"Do Androids Dream of Electric Sheep?",
+            author:" Philip K. Dick",
+            year:1999
+        },
+        {
+            title:"The Hitchhiker's Guide to the Galaxy",
+            author:" Douglas Adams",
+            year:2001
+        },
+        {
+            title:"Something Wicked This Way Comes",
+            author:" Ray Bradbury",
+            year:2000
+        },
+        {
+            title:"The Curious Incident of the Dog in the Night-Time",
+            author:"Mark Haddon",
+            year:2018
+        },
+        {
+            title:"To Kill a Mockingbird",
+            author:"Lynne Truss",
+            year:2009
+        },
+    ]
+
+   
+
+    for(let i=0;i<book.length;i++){
+        // if(book[i].year<=2000)
+        // {
+            document.write(library(book[i].year,book[i].title + "<br>"))
+        // }
+    }
+
+
+
+</script>
