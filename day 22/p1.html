@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>heading h1</h1>
+
+    <h3>heading h3</h3>
+    <h3>heading h3</h3>
+    <h3>heading h3</h3>
+    <h3>heading h3</h3>
+
+    <h5>heading h5</h5>
+    <h5>heading h5</h5>
+    <h5>heading h5</h5>
+    <h5>heading h5</h5>
+
+    <button id="btn-1" onclick="color()">Change H1</button>
+
+    <button id="btn-2" onclick="bg()">Change H3 </button>
+    <button id="btn-3" onclick="hello()">Change H5</button>
+
+    <hr>
+
+    <p style="width: 500px; height: 250px; border: 1px solid black;" class="green">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vero earum ad eaque laudantium, recusandae dicta voluptates suscipit! Sint repellat excepturi vitae non harum? Atque libero quod nesciunt quas cumque.
+    </p>
+
+    <p style="width: 500px; height: 250px; border: 1px solid black;" class="blue">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vero earum ad eaque laudantium, recusandae dicta voluptates suscipit! Sint repellat excepturi vitae non harum? Atque libero quod nesciunt quas cumque.
+    </p>
+
+    <p style="width: 500px; height: 250px; border: 1px solid black;" class="red">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vero earum ad eaque laudantium, recusandae dicta voluptates suscipit! Sint repellat excepturi vitae non harum? Atque libero quod nesciunt quas cumque.
+    </p>
+    
+
+    <button id="b1">change-1</button>
+    <button id="b2">change-2</button>
+    <button id="b3">change-3</button>
+
+</body>
+</html>
+
+<script>
+
+    let h1=document.querySelector("h1")
+
+    function color(){
+        h1.style.color='red'
+    }
+
+    let h3=document.querySelectorAll("h3")
+
+    function bg(){
+        for(let i=0;i<h3.length;i++){
+            h3[i].style.color="green"
+        }
+    }
+
+    let h5=document.querySelectorAll("h5")
+
+    // h5[0].style.color="red"
+
+    function hello(){
+        for(let i=0;i<h5.length;i++){
+            h5[i].style.color="blue"
+        }
+    }
+
+
+    let p1=document.querySelector(".green")
+
+    let b1=document.querySelector("#b1")
+
+    b1.addEventListener("click",function(){
+        p1.style.color="green"
+    })
+
+    
+    let p2=document.querySelector(".blue")
+
+    let b2=document.querySelector("#b2")
+
+    b2.addEventListener("click",function(){
+        p2.style.color="blue"
+    })
+
+    let p3=document.querySelector(".red")
+
+    let b3=document.querySelector("#b3")
+
+    b3.addEventListener("click",function(){
+        p3.style.color="red"
+    })
+
+</script>

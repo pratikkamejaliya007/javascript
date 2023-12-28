@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 250px;
+            height: 250px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="odd">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto magni nihil, veniam similique ipsam optio! Animi deserunt deleniti assumenda sapiente recusandae voluptates facere doloremque, nobis ipsam veritatis quidem at hic!
+    </div>
+    
+    <div class="even">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto magni nihil, veniam similique ipsam optio! Animi deserunt deleniti assumenda sapiente recusandae voluptates facere doloremque, nobis ipsam veritatis quidem at hic!
+    </div>
+    
+    <div class="odd">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto magni nihil, veniam similique ipsam optio! Animi deserunt deleniti assumenda sapiente recusandae voluptates facere doloremque, nobis ipsam veritatis quidem at hic!
+    </div>
+    
+    <div class="even">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto magni nihil, veniam similique ipsam optio! Animi deserunt deleniti assumenda sapiente recusandae voluptates facere doloremque, nobis ipsam veritatis quidem at hic!
+    </div>
+    
+    <div class="odd">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto magni nihil, veniam similique ipsam optio! Animi deserunt deleniti assumenda sapiente recusandae voluptates facere doloremque, nobis ipsam veritatis quidem at hic!
+    </div>
+    
+    <div class="even">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto magni nihil, veniam similique ipsam optio! Animi deserunt deleniti assumenda sapiente recusandae voluptates facere doloremque, nobis ipsam veritatis quidem at hic!
+    </div>
+
+    <button id="btn-1">change-add</button>
+
+    <button id="btn-2">change-even</button>
+    
+</body>
+</html>
+
+<script>
+
+    let odd=document.querySelectorAll(".odd")
+
+    let btn1=document.querySelector("#btn-1")
+
+    btn1.addEventListener("click",()=>{
+        for(let i=0;i<odd.length;i++){
+            odd[i].style.color="red"
+            odd[i].style.background="blue"
+        }
+    })
+
+    let even=document.querySelectorAll(".even")
+
+    let btn2=document.querySelector("#btn-2")
+
+    btn2.addEventListener("click",()=>{
+        for(let i=0;i<even.length;i++){
+            even[i].style.color="yellow"
+            even[i].style.background="black"
+        }
+    })
+
+</script>
