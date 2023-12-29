@@ -1,0 +1,84 @@
+<html>
+ <head>
+  
+ <title>Content Manipulation</title>
+ </head> 
+<body>
+ 
+  <h1 id="firstname">pratik</h1>
+   
+<div id="lastname">
+
+kamejaliya  </div>
+  
+ <p id="fullname"></p>
+ 
+  <hr/>
+   
+<button onclick="setFirstName()">FIRSTNAME</button>
+
+    <button onclick="setLastName()">LASTNAME</button>
+ 
+  <button onclick="setFullName()">FIRSTNAME NAME</button> 
+
+    <button onclick="resetDefaults()">RESET DEFAULTS</button>
+ 
+
+ </body>
+ </html>
+ 
+ <script type="text/javascript">
+
+    let first=document.querySelector("#firstname")
+
+    let second=document.querySelector("#lastname")
+
+    let p=document.querySelector("#fullname")
+
+    console.log(first.innerText)
+ 
+    
+  function setFirstName() {
+        
+
+   p=first.innerText
+     
+
+  }
+
+   
+    function setLastName() {
+    
+
+        p=second.innerText
+  
+
+     }
+
+     
+
+  function setFullName() {
+   
+
+        // Change the content of p to your full name (firstname - lastname)
+
+        p=first.innerText + second.innerText
+
+
+
+   }
+
+     
+
+
+  function resetDefaults(){
+      
+
+     // reset the firstname, lastname, and fullname to empty values 
+
+     p=" "
+
+        }
+ 
+
+  </script>

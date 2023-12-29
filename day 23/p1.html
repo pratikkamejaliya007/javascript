@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <center>
+        
+        <input type="text" name="" id="in-1" placeholder="enter number"> <br><br>
+
+        <input type="text" name="" id="in-2" placeholder="enter number"> <br><br>
+
+        <input type="text" name="" id="in-3" placeholder="enter number"> <br><br>
+
+        <input type="text" name="" id="in-4" placeholder="enter number"> 
+
+        <hr><hr>
+        <p id="ans"></p>
+
+        <hr><hr>
+
+        <button id="bnt-1">+</button>
+        <button id="bnt-2">-</button>
+        <button id="bnt-3">*</button>
+        <!-- <button id="bnt-1">+</button> -->
+    </center>
+
+</body>
+</html>
+
+<script>
+
+    let first=document.getElementById("in-1").value
+
+    let second=document.getElementById("in-2").value
+
+    let third=document.getElementById("in-3").value
+
+    let fourth=document.getElementById("in-4").value
+
+    // let p=document.querySelector("#ans")
+
+    document.querySelector("#bnt-1").addEventListener("click",()=>{
+        document.getElementById("ans").innerText= +first + +second + +third + +fourth
+    })
+
+    
+    document.querySelector("#bnt-2").addEventListener("click",()=>{
+        document.getElementById("ans").innerText= +first - +second - +third - +fourth
+    })
+
+    document.querySelector("#bnt-3").addEventListener("click",()=>{
+        document.getElementById("ans").innerText= +first * +second * +third * +fourth
+    })
+
+
+</script>
