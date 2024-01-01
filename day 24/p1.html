@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <center>
+        <input type="text" placeholder="enter email" id="in-1">
+    </center>
+
+</body>
+</html>
+
+<script>
+
+    function validemail(e){
+        if(!e.includes('@')){
+            throw new Error("email valid '@' ")
+        }else{
+            console.log("vaid email",e)
+        }
+    }
+
+    try{
+        validemail(document.getElementById("in-1").value)
+    }catch(e){
+        console.log("Error:",e.message)
+    }   
+
+
+
+</script>
