@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="from-validation.js"></script>
+
+</head>
+<body>
+
+    <center>
+
+        <form action="" id="register">
+
+            <input type="text" placeholder="Enter Name" id="name"> <br><br>
+
+            <input type="text" placeholder="Enter Number" id="num"> <br><br>
+
+            <input type="text" placeholder="Enter Email" id="mail"> <br><br>
+
+            <input type="password" placeholder="Enter Password" id="ps"> <br><br>
+
+            <input type="password" placeholder="Enter Confrom Password" id="cps"> <br><br>
+
+            <button type="submit" id="btn">submit</button> <br><br>
+
+            <span id="err" style="color: red;"></span>
+
+        </form>
+
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    
+    document.getElementById("register").onsubmit=function (str){
+
+    try{
+
+    var name=document.getElementById("name").value 
+
+    var num=document.getElementById("num").value 
+
+    var mail=document.getElementById("mail").value
+
+    var pw=document.getElementById("ps").value
+
+    var cpw=document.getElementById("cps").value 
+
+    if(/\d/.test(name)){
+        throw new Error("invalid name")
+    }
+
+    if(!/\d{10}/.test(num)){
+        throw new Error("invalid number")
+    }
+
+    if(!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(mail)){
+        throw new Error("invalid Email")
+    }
+
+    if(pw != cpw){
+        throw new Error("incorrect password")
+    }
+
+}catch(error){
+
+    event.preventDefault()
+
+    document.getElementById("err").innerText=error.message
+
+}
+
+}
+</script>
