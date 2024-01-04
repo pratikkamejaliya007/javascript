@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+    <center>
+
+        <form action="" id="form">
+
+            <input type="text" placeholder="enter name" id="name"> <br><br>
+
+            <input type="text" placeholder="enter number" id="number"> <br><br>
+
+            <input type="text" placeholder="enter email" id="email"> <br><br>
+            
+            <input type="text" placeholder="enter password" id="pw"> <br><br>
+
+            <input type="text" placeholder="enter confrom password" id="cpw"> <br><br>
+
+            <button type="submit">submit</button>
+
+        </form>
+
+    </center>
+    
+</body>
+</html>
+<script>
+
+    $(document).ready(function(){
+        $("#form").submit(function(){
+
+            let isvalue=true
+
+            var name=$("#name").val()
+            if(name==""){
+                isvalue=false
+                alert("invalid name")
+            }
+
+            var number=$("#number").val()
+
+            var check=/\d{10}/
+            if(number=="" || !check.test(number)){
+                isvalue=false
+                alert("invalid number")
+            }
+
+            var mail=$("#email").val()
+
+            if(mail==""){
+
+                isvalue=false
+                alert("invalid email")
+                
+            }
+           else if(!mail.endsWith("@gmail.com")){
+                isvalue=false
+                alert("invalid email")
+            }
+
+            var pw=$("#pw").val()
+
+            var cpw=$("#cpw").val()
+
+            if(pw !== cpw){
+                isvalue=false
+                alert("incorrect password")
+            }
+
+        })
+    })
+
+
+</script>
