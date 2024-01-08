@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    class person{
+        constructor(name,height,language,age,gendar,weight){
+
+            this.name=name
+            this.height=height
+            this.language=language
+            this.age=age
+            this.gendar=gendar
+            this.weight=weight
+        }
+    }
+
+    class child1 extends person{
+        constructor(name,height,language,age,gendar,weight,color){
+            super(name,height,language,age,gendar,weight)
+            this.color=color
+        }
+    }
+
+    class child2 extends person{
+        constructor(name,height,language,age,gendar,weight,religion){
+            super(name,height,language,age,gendar,weight)
+            this.religion=religion
+        }
+
+    }
+
+    const p= new person('a',180,'gujrati',19,'male',55)
+    
+    const c1=new child1('b',170,'hindi',14,'female',45,'white')
+
+    const c2=new child2('c',185,'english',20,'male',70,'hindu')
+
+    console.log(p)
+
+    console.log(c1)
+
+    console.log(c2)
+
+</script>

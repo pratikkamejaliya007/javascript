@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    class car{
+        constructor(brand,color,prise,year,engine,capasity){
+            this.brand=brand
+            this.color=color
+            this.prise=prise
+            this.year=year
+            this.engine=engine
+            this.capasity=capasity
+        }
+    }
+
+        class child extends car{
+
+            constructor(brand,color,prise,year,engine,capasity,type){
+                super(brand,color,prise,year,engine,capasity)
+                this.type=type
+            }
+
+        }
+
+        const car1= new car('farari','red',10000000,2024,' v 12','2 sheater')
+
+        const childcar= new child('Rolls Royel','white',1238746327,2024,'9000 cc','4 sheater','haybrid')
+
+        console.log(car1)
+
+        console.log(childcar)
+
+</script>

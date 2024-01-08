@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    class animal{
+        constructor(name,lag,size,color,type){
+            this.name=name
+            this.lag=lag
+            this.size=size
+            this.color=color
+            this.type=type
+        }
+    }
+
+    class anichld extends animal{
+        constructor(name,lag,size,color,type){
+            super(name,lag,size,color,type)
+        }
+    }
+
+    const a= new animal("elephant",4,'big','brown','whild')
+
+    const b=new anichld("tiger",4,'midum','white','whild')
+
+    console.log(a)
+
+    console.log(b)
+
+</script>
