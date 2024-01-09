@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    class shape{
+        calculateArea(){
+            return "calculateArea"
+        }
+    }    
+
+    class reactangle extends shape{
+        calculateArea(area,width){
+            return area * width
+        }
+    }
+
+    class circle extends shape{
+        calculateArea(reidus){
+            return 3.14 * reidus * reidus
+        }
+    }
+
+    class squre extends shape{
+        calculateArea(length){
+            return length ** 2
+        }
+    }
+
+    const reactanglearea=new reactangle
+
+    const circlearea=new circle
+
+    const squrearea=new squre
+
+    console.log(reactanglearea.calculateArea(12,10))
+
+    console.log(squrearea.calculateArea(10))
+
+    console.log(circlearea.calculateArea(10))   
+
+</script>
