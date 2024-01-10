@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Instrument{
+        playSound(){
+            console.log("Instrument")
+        }
+    }
+
+    class Guitar extends Instrument{
+        playSound(){
+            console.log("Strumming the guitar strings")
+        }
+    }
+
+    
+    class Piano extends Instrument{
+        playSound(){
+            console.log("Pressing the piano keys")
+        }
+    }
+
+    const a1=new Guitar
+
+    const a2=new Piano
+
+    a1.playSound()
+
+    a2.playSound()
+
+</script>
