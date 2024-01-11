@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./img/de6d58606eb35cd9.jpg" alt="">
+    <img src="./img/009501a3ad6d6fd2.jpg" alt="">
+    <img src="./img/ca2843e62171405e.jpg" alt="">
+    <img src="./img/f51d4324b73f58d7.jpg" alt="">
+
+    <button onclick="stop()">stop</button>
+</body>
+</html>
+<script>
+
+    let slider=document.querySelectorAll("img")
+
+    let index=0
+
+    console.log(slider.length)
+
+    function show(index){
+        for(let i=0;i<slider.length;i++){
+            slider[i].style.display="none"
+        }
+        slider[index].style.display="block"
+    }
+
+    function display(){
+       interval= setInterval(()=>{
+            show(index)
+            index++
+
+            if(index >= slider.length){
+                index=0
+            }
+        },1000)
+    }
+
+    function stop(){
+        clearInterval(interval)
+    }
+
+    display()
+    show(index)
+
+</script>

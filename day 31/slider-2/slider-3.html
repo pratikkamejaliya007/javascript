@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css" integrity="sha512-ZH3KB6wI5ADHaLaez5ynrzxR6lAswuNfhlXdcdhxsvOUghvf02zU1dAsOC6JrBTWbkE1WNDNs5Dcfz493fDMhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+
+        .main{
+            width: 100%;
+            height: 200px;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+        }
+        div img{
+            width: 100%;
+            height: 100%;
+        }
+
+        #btn-1{
+            position: absolute;
+            top: 80px;
+            left: 0;
+            z-index: 1;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 30px;
+            background-color: aliceblue;
+        }
+
+        #btn-2{
+            position: absolute;
+            top: 80px;
+            right: 0;
+            z-index: 1;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 30px;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="main">
+    <div>
+        <img src="./img/009501a3ad6d6fd2.jpg" alt="">
+    </div>
+    <div>
+        <img src="./img/ca2843e62171405e.jpg" alt="">
+    </div>
+    <div>
+        <img src="./img/de6d58606eb35cd9.jpg" alt="">
+    </div>
+    <div>
+        <img src="./img/f51d4324b73f58d7.jpg" alt="">
+    </div>
+    </section>
+    
+    <button id="btn-1"><i class="ri-arrow-left-s-line"></i></button>
+
+    <button id="btn-2"><i class="ri-arrow-right-s-line"></i></button>
+
+</body>
+</html>
+<script>
+
+    let slid=document.querySelectorAll("div")
+
+    let btn=document.querySelectorAll("button")
+
+    let index=0
+
+    function slidershow(index){
+        for(let i=0;i<slid.length;i++){
+            slid[i].style.opacity="0"
+        }
+        slid[index].style.opacity="100%"
+    }
+
+    btn[0].addEventListener("click",()=>{
+        index++
+        if(index>slid.length-1){
+            index=0
+            slidershow(index)
+        }else{
+            slidershow(index)
+        }
+    })
+
+    btn[1].addEventListener("click",()=>{
+        index--
+        if(index<0){
+            index=slid.length-1
+            slidershow(index)
+        }else{
+            slidershow(index)
+        }
+    })
+
+    slidershow(index)
+
+</script>

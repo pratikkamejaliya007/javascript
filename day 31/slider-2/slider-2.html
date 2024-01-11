@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="background-color: black;"></div>
+    <div style="background-color: rgb(196, 25, 25);"></div>
+    <div style="background-color: rgb(26, 224, 20);"></div>
+    <div style="background-color: rgb(44, 22, 237);"></div>
+
+    <button id="btn">click</button>
+
+    <button id="btn-1">pre</button>
+
+    <span id="span"></span>
+    
+</body>
+</html>
+<script>
+    let slid=document.querySelectorAll("div")
+    // let index=0
+    console.log(slid.length-1)    
+
+    function show(index){
+        for(let i=0;i<slid.length;i++){
+            slid[i].style.display="none"
+        }
+        slid[index].style.display="block"
+    }
+
+    let count=0
+
+    let sp=document.querySelector("span")
+
+    document.getElementById("btn").addEventListener("click",()=>{
+        count++
+        // index++
+        if(count>slid.length-1){
+            count=0
+            sp.innerText=count
+            show(count)
+        }else{
+            sp.innerText=count
+            show(count)
+        }
+    })
+
+    document.getElementById("btn-1").addEventListener("click",()=>{
+        count--
+        // index--
+        if(count<=0){
+            count=slid.length
+            console.log(count)
+            sp.innerText=count
+            show(count)
+        }else{
+            console.log(count)
+            sp.innerText=count
+            show(count)
+        }
+    })
+
+    show(count)
+    
+    // setInterval(show(index),2000)
+
+</script>
