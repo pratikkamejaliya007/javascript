@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tektur&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            font-family: 'Tektur', sans-serif;
+        }
+
+        section{
+            margin-top: 200px;
+            width: 100%;
+            height: 175px;
+            background-color: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .s-1{
+            width: 15%;
+            height: 100%;
+            /* border: 1px solid black; */
+            text-align: center;
+            padding: 10px;
+        }
+
+        .s-1 i{
+            font-size: 50px;
+            color: #1EC6AE;
+        }
+
+        .s-1 span{
+            padding: 5px 15px;
+            background-color: aquamarine;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <section>
+
+        <div class="s-1">
+            <i class="fa-regular fa-building"></i>
+            <p>Real Estate</p>
+            <span>0</span>
+        </div>
+
+        <div class="s-1">
+            <i class="fa-solid fa-book-open"></i>
+            <p>Books & Magaziens</p>
+            <span>0</span>
+        </div>
+
+        <div class="s-1">
+            <i class="fa-solid fa-chair"></i>
+            <p>Farniture</p>
+            <span>0</span>
+        </div>
+
+        <div class="s-1">
+            <i class="fa-regular fa-lightbulb"></i>
+            <p>Electronic</p>
+            <span>0</span>
+        </div>
+
+        <div class="s-1">
+            <i class="fa-solid fa-car"></i>
+            <p>Car</p>
+            <span>0</span>
+        </div>
+
+        <div class="s-1">
+            <i class="fa-solid fa-pizza-slice"></i>
+            <p>Pizza</p>
+            <span>0</span>
+        </div>
+
+    </section>
+
+</body>
+</html>
+
+<script>
+
+    let span=document.querySelectorAll("span")
+
+    let count1=0
+
+    let count2=0
+
+    let count3=0
+
+    let count4=0
+
+    let count5=0
+
+    let count6=0
+
+   let real= setInterval(()=>{
+        count1++
+        span[0].innerText=count1
+        if(count1==3921){
+            clearInterval(real)
+        }
+    },1)
+
+
+    let book=setInterval(()=>{
+        count2++
+        span[1].innerText=count2
+        if(count2==398){
+            clearInterval(book)
+        }
+    })
+
+    let fur=setInterval(()=>{
+        count3++
+        span[2].innerText=count3
+        if(count3==1229){
+            clearInterval(fur)
+        }
+    })
+
+    let ele=setInterval(()=>{
+        count4++
+        span[3].innerText=count4
+        if(count4==32891){
+            clearInterval(ele)
+        }
+    })
+
+    let car=setInterval(()=>{
+        count5++
+        span[4].innerText=count5
+        if(count5==29221){
+            clearInterval(car)
+        }
+    })
+
+    let other=setInterval(()=>{
+        count6++
+        span[5].innerText=count6
+        if(count6==219){
+            clearInterval(other)
+        }
+    },1)
+
+</script>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            font-family: 'Pacifico', cursive;
+        }
+        section{
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main{
+            width: 60%;
+            height: 50vh;
+            background-color:rgb(0, 229, 255) ;
+        }
+
+        .ma-1{
+            width: 100%;
+            height: 40%;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+            /* border: 1px solid white; */
+        }
+
+        .ma-2{
+            width: 100%;
+            height: 60%;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-around
+        }
+
+        .ma-2-1{
+            width: 20%;
+            height: 100%;
+            text-align: center;
+            /* background-color: red;; */
+        }
+
+        .m{
+            width: 100%;
+            height: 50%;
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section>
+        <div class="main">
+            
+            <div class="ma-1">
+                <h1>OUR SALE ENDS IN:</h1>
+            </div>
+
+            <div class="ma-2">
+
+                <div class="ma-2-1">
+                    <div class="m">
+                        <h2 id="h2-1">02</h2>
+                    </div>
+                    <p id="p-1">DAYS</p>
+                </div>
+
+                <div class="ma-2-1">
+                    <div class="m">
+                        <h2 id="h2-2">23</h2>
+                
+                    </div>
+                    <p id="p-2">HOURS</p>
+                </div>
+
+                <div class="ma-2-1">
+                    <div class="m">
+                        <h2 id="h2-3">59</h2>
+                        
+                    </div>
+                    <p id="p-3">MINUTES</p>
+                </div>
+
+                <div class="ma-2-1">
+                    <div class="m">
+                        <h2 id="h2-4">59</h2>
+                    </div>
+                    <p id="p-4">SECONDS</p>
+                </div>
+                
+
+            </div>
+
+        </div>
+    </section>
+    
+</body>
+</html>
+<script>
+
+    let day=document.getElementById("h2-1")
+
+    let hour=document.getElementById("h2-2")
+
+    let min=document.getElementById("h2-3")
+
+    let sec=document.getElementById("h2-4")
+
+    let message=document.querySelector("span")
+
+    let second=60
+
+    let minute=59
+    
+    let h=23
+
+    let d=2
+
+ let s1=setInterval(()=>{
+        second--
+        sec.innerText=second
+        if(second==0){
+            second=60
+        }
+
+    },1000)
+
+  let s2= setInterval(()=>{
+        minute--
+        min.innerText=minute
+        if(minute==0){
+            minute=59
+        }
+    },60000)
+
+   let s3=setInterval(()=>{
+        h--
+        hour.innerText=h
+        if(h==0){
+            h=23
+        }
+    },3600000)
+
+   let s4=setInterval(()=>{
+        d--
+        day.innerText=d
+        if(d==0){
+            clearInterval(s1)
+            clearInterval(s2)
+            clearInterval(s3)
+            clearInterval(s4)
+            message.innerText="let's Sales is start"
+        }
+    },86400000)
+
+</script>
