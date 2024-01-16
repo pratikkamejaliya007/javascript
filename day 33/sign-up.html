@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <center>
+
+        <form action="" id="submit">
+
+            <input type="text" name="" id="na" placeholder="Enter name"> <br><br>
+
+            <input type="mail" id="mail" placeholder="Enter E-mail"> <br>
+            <span></span>
+            <br><br>
+
+            <input type="password" id="pw" placeholder="Enter Password"> <br><br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </center>
+    
+</body>
+</html>
+<script>
+
+    let form=document.querySelector("form")
+
+    let message=document.querySelector("span")
+
+    form.addEventListener("submit",()=>{
+
+        event.preventDefault()
+
+        var name=document.getElementById("na").value
+        
+        var mail=document.getElementById("mail").value 
+
+        var password=document.getElementById("pw").value
+
+        let setuser=JSON.parse(localStorage.getItem("user")) || []
+
+        // setuser.push({name,mail,password})
+        let chacke=setuser.find((el)=>{
+            return mail===el.mail
+        })
+
+        if(chacke){
+            message.innerText="Already Register"
+        }else{
+            setuser.push({name,mail,password})
+        }
+
+        console.log(setuser)
+
+        localStorage.setItem("user", JSON.stringify(setuser))
+
+       
+
+    })
+
+ 
+
+</script>
