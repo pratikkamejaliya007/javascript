@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+
+    
+    <style>
+        #main{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            /* display: grid;
+            grid-template-columns: repeat(4,1fr); */
+        }
+
+        .first{
+            text-align: center;
+            flex-basis: 20%;
+            height: 100%;
+            margin: 10px;
+            border: 1px solid black;
+        }
+
+        img{
+            width: auto;
+            height: 100px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div id="main">
+
+    </div>
+
+</body>
+</html>
+<script>
+
+    let pro=JSON.parse(localStorage.getItem("cart")) || []
+
+    function display(index){
+
+        pro.map((el)=>{
+
+            let div=document.createElement("div")
+
+            div.setAttribute("class","first")
+
+            let img=document.createElement("img")
+
+            img.setAttribute("src",el.image)
+
+            let title=document.createElement("h6")
+
+            title.innerText=el.title
+
+            let brand=document.createElement("p")
+
+            brand.innerText=el.category
+
+            let price=document.createElement("span")
+
+            price.style.display="block"
+
+            price.innerText=el.price
+
+            div.append(img,title,brand)
+
+            document.getElementById("main").append(div)
+
+        })
+
+    }
+
+    display(pro)
+
+</script>
