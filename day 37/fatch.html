@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API fatch</title>
+</head>
+<body>
+    
+    <img src="" alt="">
+    
+</body>
+</html>
+<script>
+
+    fetch('https://dog.ceo/api/breeds/image/random')
+
+    .then(function(ab){
+        return ab.json()
+    })
+
+    .then(function(json){
+        show(json)
+    })
+
+    function show(json){
+        document.querySelector("img").src=json.message
+    }
+
+</script>
