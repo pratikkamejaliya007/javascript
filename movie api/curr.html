@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <center>
+        <input type="text" placeholder="Enter " id="in-1"> <br><br>
+
+        <button onclick="change()">convert</button>
+    </center>
+
+</body>
+</html>
+
+<script>
+
+    function change(){
+        
+    fetch(`https://api.currencyapi.com/v3/latest?apikey=fca_live_VoOAHfHBdJJqJe2T6nzR40MX7AsDnbnrOEJK7pKJ&currencies=EUR%2CUSD%2CCAD`)
+
+    let key="fca_live_VoOAHfHBdJJqJe2T6nzR40MX7AsDnbnrOEJK7pKJ"
+
+    .then(function(data){
+        return data.json()
+    })
+
+    .then(function(json){
+        console.log(json)
+    })
+
+    }
+    
+
+</script>

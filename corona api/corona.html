@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>corona</title>
+
+    <style>
+
+        section{
+            margin-top: 140px;
+            width: 60%;
+            height: 600px;
+            background-color: greenyellow;
+            padding: 30px;
+        }
+
+        input{
+            width: 200px;
+            height: 40px;
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        button{
+            width: 100px;
+            height: 45px;
+            font-size: 20px;
+            background-color: black;
+            border: none;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .main{
+            margin-top: 30px;
+            width: 60%;
+            height: 60%;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .main h6{
+            font-size: 30px;
+        }
+
+        .main p{
+            font-size: 20px;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <center>
+    <section>
+
+        <h1>COVID-19 CASES STAT WISE</h1>
+        <input type="text" placeholder="Enter State Name" id="in-1"> <br><br>
+
+        <button onclick="search()">Search</button>
+
+        <div class="main">
+
+        </div>
+
+    </section>
+    
+</center>    
+
+    
+</body>
+</html>
+
+<script>
+
+    function search(){
+
+        document.querySelector(".main").innerHTML=""
+
+        fetch(`https://data.covid19india.org/v4/min/data.min.json`)
+
+        .then(function(data){
+            return data.json()
+        })
+        .then(function(json){
+           display(json)
+        })
+    }
+
+    function display(data){
+
+        let S_name=document.getElementById("in-1").value 
+
+        let stat=document.createElement("h6")
+
+        let cases=document.createElement("p")
+
+        let death=document.createElement("p")
+
+        let today_case=document.createElement("p")
+
+        let today_datch=document.createElement("p")
+
+
+        for(x in data){
+            
+            if(S_name == x){
+                
+            stat.innerText=`STATE NAME:${x}`
+
+            cases.innerText=`Cases:${data[x].total.confirmed}`
+
+            death.innerText=`Recovered:${data[x].total.recovered}`
+
+            today_case.innerText=`Cases Today: ${data[x].delta.confirmed}`
+
+            today_datch.innerText=`Recovered Today: ${data[x].delta.recovered}`
+
+        }
+
+        }
+
+        document.querySelector(".main").append(stat,cases,death,today_case,today_datch)
+    }
+    
+
+
+
+</script>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>netflex</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            height: 1000px;
+            /* border: 1px solid black; */
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            background-image: linear-gradient(rgba(2, 2, 2, 0.724),rgba(2,2,2,0.5)),url(images/IN-en-20240115-trifectadaily-perspective_alpha_website_small.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        flex-direction: column;
+
+        }
+        #sub{
+            width: 80%;
+            height: 100px;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo{
+            width: 20%;
+            height: 200px;
+            /* border: 1px solid black; */
+        }
+        .logo img{
+            width: 100%;
+            height: 100%;
+            padding: 7px;
+        }
+        .btn{
+            width: 20%;
+            height: 100px;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            background-color: red;
+            font-size: 16px;
+            color: white;
+            border-radius: 16px;
+            border: none;
+
+            
+        }
+        #sub1{
+            width: 100%;
+            height: 700px;
+            /* border: 1px solid white; */
+            /* margin-top: 150px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1;
+        }
+        input{
+            width: 30%;
+            height: 50px;
+            /* padding-left: 10px; */
+            text-align: center;
+            font-size: 20px;
+            border: none;
+        }
+        #btn1{
+            width: 10%;
+            border-radius: none;
+        }
+        #main{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* flex-direction: column; */
+            flex-wrap: wrap;
+        }
+        #main h1{
+            
+         color: white;
+         text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="sub">
+            <div class="logo">
+                <img src="data:image/png;base64,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" alt="">
+            </div>
+            <div class="btn">
+              <button>Sign in</button> <br>
+            </div>
+        </div>
+
+        <div id="sub1">
+            <h1 style="color: white;font-size: 45px;">
+                Unlimited movies, TV shows and more ......
+            </h1>
+            <br><br>
+            <input type="text" id="name" placeholder="Enter Movies">
+            <br> <br>
+            <button onclick="fetchdata()" id="btn1">Search</button>
+        </div>
+
+        <div id="main">
+           
+        </div>
+       
+        
+    </header>
+
+    
+</body>
+</html>
+<!-- cd5abf83 -->
+
+<script>
+
+    function fetchdata()
+    {
+     
+        document.getElementById("main").innerHTML=""
+        let name=document.getElementById("name").value;
+
+        let Api="cd5abf83"
+
+        fetch(`http://www.omdbapi.com/?apikey=${Api}&t=${name}`)
+
+        .then(function(res){
+
+            return res.json()
+        })
+        .then(function(json){
+            console.log(json)
+            displaymovie(json)
+        })
+    }
+
+    function displaymovie(json)
+    {
+      let image=document.createElement("img")
+      image.setAttribute("src",json.Poster)
+
+      let title=document.createElement("h1")
+      title.innerHTML=json.Title
+
+      document.querySelector("#main").append(image,title)
+    }
+</script>

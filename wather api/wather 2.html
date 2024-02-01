@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #main{
+            width: 500px;
+            height: 250px;
+            margin-top: 50px;
+            background-color: black;
+            padding: 30px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <center>
+
+        <input type="text" placeholder="enter city" id="i-1"> <br><br>
+
+        <button onclick="wathe()">click</button>
+
+    </center>
+
+    <center>
+    
+    <div id="main">
+
+    </div>
+
+</center>
+
+</body>
+</html>
+<script>
+
+    function wathe(){
+
+        let name=document.getElementById("i-1").value 
+
+        let key="690da37fd76a4c6a1571383f5b615e95"
+
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=${key}`)
+
+        .then(function(data){
+            return data.json()
+        })
+
+        .then(function(json){
+            
+            console.log(json)
+          display(json)  
+        })
+
+    }
+
+    let city=document.createElement("p")
+
+let curr_temp=document.createElement("p")
+
+let min_temp=document.createElement("p")
+
+let max_temp=document.createElement("p")
+
+let pre=document.createElement("p")
+
+    function display(json){
+        city.innerText=`Location:${json.name}`
+
+        curr_temp.innerText=` temp..${json.main.temp}`
+
+        min_temp.innerText=`Minimum temp.. :${json.main.temp_min}`
+
+        max_temp.innerText=`maximum temp.. :${json.main.temp_max}`
+
+        pre.innerText=`Pressure:${json.main.pressure}`
+
+        document.querySelector("#main").append(city,curr_temp,min_temp,max_temp,pre)
+
+    }
+    
+
+</script>
