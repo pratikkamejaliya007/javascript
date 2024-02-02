@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>await </title>
+
+    <style>
+
+        #main{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            height: 100vh;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+<div id="main">
+
+</div>
+
+</body>
+</html>
+<script>
+
+    async function fetchdata(){
+
+        try{
+
+            let url= await fetch("https://jsonplaceholder.typicode.com/posts") 
+
+            let data=  await url.json()
+
+            console.log(data)
+
+            display(data)
+            
+        }catch(Error){
+            console.log(Error)
+        }
+
+    }
+
+    fetchdata()
+
+   function display(json){
+
+    json.map((el)=>{
+
+        let div=document.createElement("div")
+
+        div.style.flexBasis="24%"
+        div.style.height="300px"
+        div.style.border="1px solid black"
+
+        let h6=document.createElement("h4")
+
+        h6.innerText=el.title
+
+        let h1=document.createElement("h1")
+
+        h1.innerText=el.id
+
+        let p=document.createElement("p")
+
+        p.innerText=el.body
+
+        div.append(h1,h6,p)
+
+        document.querySelector("#main").append(div)
+
+    })
+
+    }
+
+</script>
