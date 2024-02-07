@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #main {
+
+            display: flex;
+            text-align: center;
+        }
+
+        #photo{
+            width: 200px;
+            height: 200px;
+            /* border: 1px solid black; */
+            
+        }
+
+    </style>
+</head>
+<body>
+
+    <select name="" id="sort-select">
+        <option value="high">price high to low</option>
+        <option value="low">price low to high</option>
+        <option value="az">A-Z</option>
+        <option value="za">Z-A</option>
+
+    </select>
+
+    <div id="cart"></div>
+    
+        <div id="main">
+            
+        </div>
+    
+    
+</body>
+</html>
+
+<script>
+
+    let data = [
+        {
+            id : 1 ,
+            title : "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
+            price : 56.99 ,
+            image : "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
+        },
+
+        {
+            id : 2,
+            title : 	"Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket" ,
+            price : 29.99,
+            image : 	"https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+        },
+
+        {
+            id : 3,
+            title : 	"Rain Jacket Women Windbreaker Striped Climbing Raincoats" ,
+            price : 39.99,
+            image : 	"https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg"
+        },
+
+        {
+            id : 4,
+            title : 	"MBJ Women's Solid Short Sleeve Boat Neck V ",
+            price : 9.85,
+            image : "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg"
+        },
+    ]
+
+
+
+    let cartbtn = document.createElement("button")
+    cartbtn.innerHTML="CART"
+    document.getElementById("cart").append(cartbtn)
+
+    cartbtn.addEventListener("click",function(){
+        window.open("cart.html")
+    })
+
+    function displaydata(data){
+        document.getElementById("main").innerHTML=""
+        data.map((el,i)=>{
+            let div = document.createElement("div")
+
+            let pic = document.createElement("img")
+            pic.setAttribute("src",el.image)
+            pic.setAttribute("id", "photo")
+
+
+            let name = document.createElement("h3")
+            name.innerHTML = el.title
+
+            let pr = document.createElement("h2")
+            pr.innerText = el.price
+
+            let btn = document.createElement("button")
+            btn.innerHTML = "ADD TO CART"
+
+            btn.addEventListener("click",function(){
+                addTocart(i)
+            })
+
+
+            div.append(pic,name,pr,btn)
+            document.querySelector("#main").append(div)
+        })
+    }
+
+    displaydata(data)
+
+    let sortselect = document.getElementById("sort-select")
+    sortselect.addEventListener("change",()=>{
+        let selected = sortselect.value 
+        let selectedvalue = []
+
+        if(selected === "low"){
+            selectedvalue = data.slice().sort((a,b)=>a.price-b.price)
+        }else if(selected === "high"){
+            selectedvalue = data.slice().sort((a,b)=>b.price - a.price)
+        }else if (selected === "az"){
+            selectedvalue = data.slice().sort((a,b)=>a.title.localeCompare(b.title))
+        }else if (selected === "za"){
+            selectedvalue = data.slice().sort((a,b)=>b.title.localeCompare(a.title))
+        }
+        displaydata(selectedvalue)
+    })
+
+    function addTocart(index){
+        // let prodect = data.filter((item,i)=>{
+        //     return i === index
+        // })
+
+        let prodect = data[index]
+
+
+        let prodects = JSON.parse(localStorage.getItem("cart")) || []
+        // prodects.push(prodect[0])
+
+        let existingprodect = prodects.findIndex(p=>p.id == prodect.id)
+
+        if (existingprodect != -1){
+            prodects[existingprodect].quantity +=1
+        }else{
+            prodects.push(prodect)
+            prodect.quantity = 1
+        }
+
+        localStorage.setItem("cart",JSON.stringify(prodects))
+    }
+
+    
+</script>

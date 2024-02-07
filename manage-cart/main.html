@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <style>
+        #main{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            /* display: grid;
+            grid-template-columns: repeat(4,1fr); */
+        }
+
+        .first{
+            text-align: center;
+            flex-basis: 20%;
+            height: 100%;
+            margin: 10px;
+            border: 1px solid black;
+        }
+
+        img{
+            width: auto;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <select name="" id="sort">
+        <option value="">filter</option>
+        <option value="high">Prise High to low</option>
+        <option value="low">Prise low to High</option>
+        <option value="az">A-Z</option>
+        <option value="za">Z-A</option>
+    </select>
+    <div id="cart">
+
+    </div>
+    <br><br>
+    <div id="main">
+
+    </div>
+    
+</body>
+</html>
+<script>
+
+
+
+    let cartbtn=document.createElement("button")
+
+    cartbtn.innerText="CART"
+
+    document.getElementById("cart").append(cartbtn)
+
+    cartbtn.addEventListener("click",()=>{
+        window.open("cart.html")
+    })
+
+    let data=[
+        {
+            id :1,
+            title :	"MOTOROLA Edge 40",
+            category  :	"MOTOROLA",
+            image  :"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/2/m/o/edge-40-pay40030in-motorola-original-imagpqzchzhg6fex.jpeg?q=70",
+            price :	26999
+        },
+        {
+            id :2,
+            title :	"SAMSUNG Galaxy F13",
+            category  :	"SAMSUNG ",
+            image  :"https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/q/l/l/-original-imagueeyshyqzbfh.jpeg?q=70&crop=false",
+            price :	10999
+        },
+        {
+            id :3,
+            title :	"vivo T2x 5G",
+            category  :	"vivo ",
+            image  :"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/4/h/e/-original-imagzjhwmsamexfk.jpeg?q=70",
+            price :	12999
+        },
+        {
+            id :4,
+            title :	"OPPO A17",
+            category  :	"OPPO",
+            image  :"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/3/u/w/-original-imagtcrvzrqnnxpc.jpeg?q=70",
+            price :	32999
+        },
+        {
+            id :5,
+            title :	"Nothing Phone ",
+            category  :	"Nothing",
+            image  :"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/u/m/b/-original-imagrdefbw6bhbjr.jpeg?q=70",
+            price :	42999
+        },
+        {
+            id :6,
+            title :	"Apple iPhone 15 ",
+            category  :	"Apple ",
+            image  :"https://rukminim2.flixcart.com/image/612/612/xif0q/mobile/h/d/9/-original-imagtc2qzgnnuhxh.jpeg?q=70   ",
+            price :	67499
+        },
+        {
+            id :7,
+            title :	"Apple iPhone 15 Pro",
+            category  :	"Apple ",
+            image  :"https://rukminim2.flixcart.com/image/612/612/xif0q/mobile/z/4/r/-original-imagtc4g22rcatjg.jpeg?q=70",
+            price :	54999
+        },
+        {
+            id :8,
+            title :	"SAMSUNG Galaxy S23 Ultra 5G",
+            category  :	"SAMSUNG",
+            image  :"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/2/s/7/-original-imagmg6gktts6sfy.jpeg?q=70",
+            price :	124999
+        },
+        
+    ]
+    function show(data){
+
+        document.getElementById("main").innerText=""
+
+        data.map((el,i)=>{
+
+            
+        let div=document.createElement("div")
+
+        div.setAttribute("class","first")
+
+        let img=document.createElement("img")
+
+        img.setAttribute("src",el.image)
+
+        let title=document.createElement("h6")
+
+        title.innerText=el.title
+
+        let brand=document.createElement("p")
+
+        brand.innerText=el.category
+
+        let prise=document.createElement("span")
+
+        prise.style.display="block"
+
+        prise.innerText=el.price 
+
+        let btn=document.createElement("button")
+
+            btn.innerText="add to cart"
+
+        btn.addEventListener("click",()=>{
+            addtocart(el.id)
+        })
+
+            div.append(img,title,brand,prise,btn)
+
+            document.getElementById("main").append(div)
+
+        })
+
+    }
+     
+    show(data)
+
+    let sortselect=document.getElementById("sort")
+
+    sortselect.addEventListener("change",()=>{
+
+        let selcted=sortselect.value
+
+        let selctedvalue=[]
+
+        if(selcted==="low"){
+            selctedvalue=data.slice().sort((a,b)=>a.price-b.price)
+        }else if(selcted==="high"){
+            selctedvalue=data.slice().sort((a,b)=>b.price-a.price)
+        }else if(selcted==="az"){
+            selctedvalue=data.slice().sort((a,b)=>a.title.localeCompare(b.title))
+        }else if(selcted==="za"){
+            selctedvalue=data.slice().sort((a,b)=>b.title.localeCompare(a.title))
+        }
+
+        show(selctedvalue)
+
+    })
+
+    function addtocart(index){
+
+        let product=data.filter((el)=>{
+            return el.id==index
+        })
+        let pro=JSON.parse(localStorage.getItem("cart")) || []
+
+        console.log(product)
+
+        let chack=pro.find((el)=>{
+            return el.id == product[0].id
+        })
+
+        // if(chack){
+            
+        // }else{
+            // pro.push(product[0])
+        // }
+
+        // let existingprodect = prodects.findIndex(p=>p.id == prodect.id)
+
+        // if (existingprodect != -1){
+        //     prodects[existingprodect].quantity +=1
+        // }else{
+        //     prodects.push(prodect)
+        //     prodect.quantity = 1
+        // }
+
+        let existingprodect=product.findIndex((p)=>p.id == product.id)
+
+        if(existingprodect != -1){
+            pro[existingprodect].quatity+=1
+        }else{
+            pro.push(product)
+            product.quatity=1
+        }
+
+
+        localStorage.setItem("cart",JSON.stringify(pro))
+
+    }
+</script>
